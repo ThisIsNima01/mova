@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mova/config/theme/app_theme.dart';
+import 'package:mova/screens/base/base_screen.dart';
 import 'package:mova/screens/home/home_screen.dart';
 
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         theme: AppTheme.lightMode,
         darkTheme: AppTheme.darkMode,
         themeMode: ThemeMode.system,
-        home: const HomeScreen(),
+        home: const BaseScreen(),
       ),
     );
   }

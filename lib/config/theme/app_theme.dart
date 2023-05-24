@@ -15,26 +15,43 @@ class AppTheme {
         GoogleFonts.urbanist(fontSize: 24.sp, fontWeight: FontWeight.w700),
     headlineSmall:
         GoogleFonts.urbanist(fontSize: 20.sp, fontWeight: FontWeight.w700),
-    titleLarge: GoogleFonts.urbanist(fontSize: 18.sp, fontWeight: FontWeight.w700),
-    bodyLarge: GoogleFonts.urbanist(fontSize: 16.sp, fontWeight: FontWeight.w700),
-    bodyMedium: GoogleFonts.urbanist(fontSize: 14.sp, fontWeight: FontWeight.w700),
-    bodySmall: GoogleFonts.urbanist(fontSize: 12.sp, fontWeight: FontWeight.w700),
-    labelSmall: GoogleFonts.urbanist(fontSize: 10.sp, fontWeight: FontWeight.w700),
+    titleLarge:
+        GoogleFonts.urbanist(fontSize: 18.sp, fontWeight: FontWeight.w700),
+    bodyLarge:
+        GoogleFonts.urbanist(fontSize: 16.sp, fontWeight: FontWeight.w700),
+    bodyMedium:
+        GoogleFonts.urbanist(fontSize: 14.sp, fontWeight: FontWeight.w700),
+    bodySmall:
+        GoogleFonts.urbanist(fontSize: 12.sp, fontWeight: FontWeight.w700),
+    labelSmall:
+        GoogleFonts.urbanist(fontSize: 10.sp, fontWeight: FontWeight.w700),
   );
 
   static ThemeData lightMode = ThemeData(
-    scaffoldBackgroundColor: AppColors.white,
-    brightness: Brightness.light,
-    primaryColor: AppColors.primary,
-    textTheme: appTextTheme
-  );
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        elevation: 0,
+        backgroundColor: AppColors.white,
+        unselectedLabelStyle:
+            GoogleFonts.urbanist(fontSize: 10.sp, fontWeight: FontWeight.w500),
+        selectedLabelStyle: GoogleFonts.urbanist(fontSize: 10.sp, fontWeight: FontWeight.w700),
+      ),
+      scaffoldBackgroundColor: AppColors.white,
+      brightness: Brightness.light,
+      primaryColor: AppColors.primary,
+      textTheme: appTextTheme);
 
   static ThemeData darkMode = ThemeData(
-    scaffoldBackgroundColor: AppColors.dark1,
-    brightness: Brightness.dark,
-    primaryColor: AppColors.primary,
-    textTheme: appTextTheme
-  );
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        unselectedLabelStyle:
+        GoogleFonts.urbanist(fontSize: 10.sp, fontWeight: FontWeight.w500),
+        selectedLabelStyle: GoogleFonts.urbanist(fontSize: 10.sp, fontWeight: FontWeight.w700),
+        elevation: 0,
+        backgroundColor: const Color(0xff181A20).withOpacity(0.8),
+      ),
+      scaffoldBackgroundColor: AppColors.dark1,
+      brightness: Brightness.dark,
+      primaryColor: AppColors.primary,
+      textTheme: appTextTheme);
 }
 
 class AppFontColorBuilder {
