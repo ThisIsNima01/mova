@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mova/config/theme/app_colors.dart';
 
 class AppTheme {
-  ThemeData lightMode = ThemeData(
+  static ThemeData lightMode = ThemeData(
     scaffoldBackgroundColor: AppColors.white,
     brightness: Brightness.light,
     primaryColor: AppColors.primary,
@@ -26,15 +26,22 @@ class AppTheme {
           GoogleFonts.urbanist(fontSize: 14, fontWeight: FontWeight.w700),
       bodySmall:
           GoogleFonts.urbanist(fontSize: 12, fontWeight: FontWeight.w700),
+      labelSmall:
+          GoogleFonts.urbanist(fontSize: 10, fontWeight: FontWeight.w700),
     ),
   );
 }
 
 class AppFontColorBuilder {
-  static Color getGrey900AndWhite(BuildContext context) => Theme.of(context).brightness == ThemeMode.light ? AppColors.grey900 : AppColors.white;
+  static Color getGrey900AndWhite(BuildContext context) {
+    var brightness = MediaQuery.of(context).platformBrightness;
+    bool isLightMode = brightness == Brightness.light;
 
-  // static Color getGrey900AndWhite(BuildContext context) => Theme.of(context).brightness == ThemeMode.light ? AppColors.grey900 : AppColors.white;
-  // static Color getGrey900AndWhite(BuildContext context) => Theme.of(context).brightness == ThemeMode.light ? AppColors.grey900 : AppColors.white;
-  // static Color getGrey900AndWhite(BuildContext context) => Theme.of(context).brightness == ThemeMode.light ? AppColors.grey900 : AppColors.white;
-  // static Color getGrey900AndWhite(BuildContext context) => Theme.of(context).brightness == ThemeMode.light ? AppColors.grey900 : AppColors.white;
+    return isLightMode ? AppColors.grey900 : AppColors.white;
+  }
+
+// static Color getGrey900AndWhite(BuildContext context) => Theme.of(context).brightness == ThemeMode.light ? AppColors.grey900 : AppColors.white;
+// static Color getGrey900AndWhite(BuildContext context) => Theme.of(context).brightness == ThemeMode.light ? AppColors.grey900 : AppColors.white;
+// static Color getGrey900AndWhite(BuildContext context) => Theme.of(context).brightness == ThemeMode.light ? AppColors.grey900 : AppColors.white;
+// static Color getGrey900AndWhite(BuildContext context) => Theme.of(context).brightness == ThemeMode.light ? AppColors.grey900 : AppColors.white;
 }

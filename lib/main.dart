@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
       designSize: const Size(428, 926),
       minTextAdapt: true,
       builder: (context, child) => MaterialApp(
-        theme: AppTheme().lightMode,
+        theme: AppTheme.lightMode,
+        themeMode: ThemeMode.light,
         home: const HomeScreen(),
       ),
     );
