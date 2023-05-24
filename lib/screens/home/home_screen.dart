@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mova/config/theme/app_colors.dart';
-import 'package:mova/config/theme/app_theme.dart';
 import 'package:mova/screens/home/widgets/movie_card_item.dart';
+import 'package:mova/screens/home/widgets/movie_list.dart';
 import 'package:mova/screens/home/widgets/movie_list_title.dart';
 import 'package:mova/screens/home/widgets/top_header.dart';
 
@@ -19,42 +16,18 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
     return Scaffold(
-      body: SafeArea(
-        child: CustomScrollView(
-          shrinkWrap: true,
-          slivers: [
-            TopHeader(theme: theme),
-            MovieListTitle(theme: theme, title: 'Top 10 Movies This Week'),
-            SliverToBoxAdapter(
-              child: SizedBox(
-                height: 200,
-                child: ListView.builder(
-                  itemCount: 8,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) =>
-                      MovieCardItem(itemIndex: index),
-                ),
-              ),
-            ),
-            MovieListTitle(theme: theme, title: 'New Releases'),
-            SliverToBoxAdapter(
-              child: SizedBox(
-                height: 200,
-                child: ListView.builder(
-                  itemCount: 8,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) =>
-                      MovieCardItem(itemIndex: index),
-                ),
-              ),
-            ),
-            const SliverPadding(padding:  EdgeInsets.only(top: 24)),
-          ],
-        ),
+      body: CustomScrollView(
+        slivers: [
+          TopHeader(theme: theme),
+          MovieListTitle(theme: theme, title: 'Top 10 Movies This Week'),
+          MovieList(itemCount: 6, movieCategory: 'top_movies'),
+          MovieListTitle(theme: theme, title: 'New Releases'),
+          MovieList(itemCount: 6, movieCategory: 'new_movies'),
+          const SliverPadding(padding: EdgeInsets.only(top: 24)),
+        ],
       ),
     );
   }
 }
-
 
 

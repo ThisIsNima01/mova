@@ -14,10 +14,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(428, 926),
-      minTextAdapt: true,
       builder: (context, child) => MaterialApp(
+        debugShowCheckedModeBanner: false,
         theme: AppTheme.lightMode,
-        themeMode: ThemeMode.light,
+        darkTheme: AppTheme.darkMode,
+        themeMode: ThemeMode.system,
         home: const HomeScreen(),
       ),
     );

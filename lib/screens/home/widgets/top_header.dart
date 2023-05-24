@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:mova/config/global/constants/image_routes.dart';
 
 import '../../../config/theme/app_colors.dart';
+
 class TopHeader extends StatelessWidget {
   const TopHeader({
     super.key,
@@ -15,24 +18,37 @@ class TopHeader extends StatelessWidget {
     return SliverToBoxAdapter(
       child: Stack(
         children: [
-          Image.asset('assets/images/home_header.png'),
+          ShaderMask(
+            shaderCallback: (bounds) => const LinearGradient(
+              begin: FractionalOffset.bottomLeft,
+              end: FractionalOffset.center,
+              colors: [
+                Color(0xff181A20),
+                Colors.white,
+              ],
+            ).createShader(bounds),
+            blendMode: BlendMode.modulate,
+            child: Image.asset(
+              AppImagesRoute.homeTopHeaderImage,
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
             child: Row(
               children: [
-                SvgPicture.asset('assets/images/app_logo.svg'),
+                SvgPicture.asset(AppImagesRoute.appLogo),
                 const Spacer(),
-                SvgPicture.asset('assets/images/icon_search.svg'),
+                SvgPicture.asset(AppImagesRoute.iconSearch),
                 const SizedBox(
                   width: 24,
                 ),
-                SvgPicture.asset('assets/images/icon_bell.svg'),
+                SvgPicture.asset(AppImagesRoute.iconBell),
               ],
             ),
           ),
           Positioned(
-            bottom: 24,
-            left: 24,
+            bottom: 24.h,
+            left: 24.w,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -41,16 +57,16 @@ class TopHeader extends StatelessWidget {
                   style: theme.textTheme.headlineMedium!
                       .copyWith(color: AppColors.white),
                 ),
-                const SizedBox(
-                  height: 8,
+                 SizedBox(
+                  height: 8.h,
                 ),
                 Text(
                   'Action, Superhero, Science Fiction, ...',
                   style: theme.textTheme.bodySmall!.copyWith(
                       color: AppColors.white, fontWeight: FontWeight.w500),
                 ),
-                const SizedBox(
-                  height: 8,
+                 SizedBox(
+                  height: 8.h,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -65,7 +81,7 @@ class TopHeader extends StatelessWidget {
                       onPressed: () {},
                       child: Row(
                         children: [
-                          SvgPicture.asset('assets/images/icon_play.svg'),
+                          SvgPicture.asset(AppImagesRoute.iconPlay),
                           const SizedBox(
                             width: 8,
                           ),
@@ -86,15 +102,15 @@ class TopHeader extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.transparent,
                         shape: RoundedRectangleBorder(
-                          side:
-                          const BorderSide(color: AppColors.white, width: 2),
+                          side: const BorderSide(
+                              color: AppColors.white, width: 2),
                           borderRadius: BorderRadius.circular(100),
                         ),
                       ),
                       onPressed: () {},
                       child: Row(
                         children: [
-                          SvgPicture.asset('assets/images/icon_plus.svg'),
+                          SvgPicture.asset(AppImagesRoute.iconPlus),
                           const SizedBox(
                             width: 8,
                           ),
