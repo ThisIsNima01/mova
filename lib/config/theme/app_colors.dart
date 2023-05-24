@@ -42,7 +42,7 @@ class AppColors {
   static const Color indigo = Color(0xff3F51B5);
   static const Color blue = Color(0xff2196F3);
   static const Color lightBlue = Color(0xff03A9F4);
-  static const Color cynan = Color(0xff00BCD4);
+  static const Color cyan = Color(0xff00BCD4);
   static const Color teal = Color(0xff009688);
   static const Color green = Color(0xff4CAF50);
   static const Color lightGreen = Color(0xff8BC34A);
