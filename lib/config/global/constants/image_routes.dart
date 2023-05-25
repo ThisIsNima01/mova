@@ -18,4 +18,5 @@ class AppImagesRoute {
   static const String iconDownloadSelected = 'assets/images/icon_download_selected.svg';
   static const String iconProfile = 'assets/images/icon_profile.svg';
   static const String iconProfileSelected = 'assets/images/icon_profile_selected.svg';
+  static const String iconFilter = 'assets/images/icon_filter.svg';
 }

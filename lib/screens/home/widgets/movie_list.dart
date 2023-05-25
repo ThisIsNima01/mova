@@ -19,7 +19,7 @@ class MovieList extends StatelessWidget {
         child: ListView.builder(
           itemCount: itemCount,
           scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) => MovieCardItem(itemIndex: index, itemCount: itemCount, movieCategory: movieCategory),
+          itemBuilder: (context, index) => MovieCardItem(itemIndex: index, itemCount: itemCount, movieCategory: movieCategory,needsSpacing: true),
         ),
       ),
     );

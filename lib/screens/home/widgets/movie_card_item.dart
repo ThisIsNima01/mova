@@ -5,24 +5,32 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mova/config/global/utils/random_movie_point.dart';
 
 import '../../../config/theme/app_colors.dart';
+
 class MovieCardItem extends StatelessWidget {
   int itemIndex;
   int itemCount;
   String movieCategory;
+  bool needsSpacing;
 
-  MovieCardItem({Key? key, required this.itemIndex, required this.itemCount, required this.movieCategory}) : super(key: key);
+  MovieCardItem(
+      {Key? key,
+      required this.itemIndex,
+      required this.itemCount,
+      required this.movieCategory,required this.needsSpacing})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
     return Container(
-      height: 200,
       width: 150.w,
-      margin: EdgeInsets.only(left: itemIndex == 0 ? 24.w : 10, right: itemIndex == itemCount - 1 ? 24.w : 0),
-      decoration:  BoxDecoration(
+      margin: needsSpacing ? EdgeInsets.only(
+          left: itemIndex == 0 ? 24.w : 10.w,
+          right: itemIndex == itemCount - 1 ? 24.w : 0) : null,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
         image: DecorationImage(
           image: AssetImage('assets/images/$movieCategory/$itemIndex.png'),
-          fit: BoxFit.cover,
         ),
       ),
       child: Align(

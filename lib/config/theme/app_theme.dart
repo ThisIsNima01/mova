@@ -67,6 +67,30 @@ class AppFontColorBuilder {
             : Colors.blue;
   }
 
+  static Color getGrey100AndDark2(BuildContext context) {
+    var brightness = MediaQuery.of(context).platformBrightness;
+    bool isLightMode = brightness == Brightness.light;
+    bool isDarkMode = brightness == Brightness.dark;
+
+    return isLightMode
+        ? AppColors.grey100
+        : isDarkMode
+        ? AppColors.dark2
+        : Colors.blue;
+  }
+
+  static Color getGrey600AndGrey400(BuildContext context) {
+    var brightness = MediaQuery.of(context).platformBrightness;
+    bool isLightMode = brightness == Brightness.light;
+    bool isDarkMode = brightness == Brightness.dark;
+
+    return isLightMode
+        ? AppColors.grey400
+        : isDarkMode
+        ? AppColors.grey600
+        : Colors.blue;
+  }
+
 // static Color getGrey900AndWhite(BuildContext context) => Theme.of(context).brightness == ThemeMode.light ? AppColors.grey900 : AppColors.white;
 // static Color getGrey900AndWhite(BuildContext context) => Theme.of(context).brightness == ThemeMode.light ? AppColors.grey900 : AppColors.white;
 // static Color getGrey900AndWhite(BuildContext context) => Theme.of(context).brightness == ThemeMode.light ? AppColors.grey900 : AppColors.white;
