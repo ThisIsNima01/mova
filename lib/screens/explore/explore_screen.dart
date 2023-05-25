@@ -132,9 +132,9 @@ class _ExploreScreenState extends State<ExploreScreen> {
                         itemCount: 5,
                         movieCategory: 'new_movies',needsSpacing: false,),),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    childAspectRatio: 2 / 2.5,
-                    mainAxisSpacing: 10,
-                    crossAxisSpacing: 10,
+                    childAspectRatio: 2 / 2.6,
+                    mainAxisSpacing: 8,
+                    crossAxisSpacing: 8,
                     crossAxisCount: 2),
               ),
             )
