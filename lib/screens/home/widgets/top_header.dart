@@ -58,6 +58,14 @@ class _TopImageSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    const designHeight = 926.0;
+    const imageHeight = 428.0;
+
+    final heightRatio = screenHeight / designHeight;
+
+    final responsiveImageHeight = heightRatio * imageHeight;
+
     return ShaderMask(
       shaderCallback: (bounds) => const LinearGradient(
         begin: FractionalOffset.bottomLeft,
@@ -70,9 +78,10 @@ class _TopImageSection extends StatelessWidget {
       blendMode: BlendMode.modulate,
       child: Image.asset(
         AppImagesRoute.homeTopHeaderImage,
-        fit: BoxFit.cover,
-        height: MediaQuery.of(context).size.height * 0.43,
-        width: double.infinity,
+        // fit: BoxFit.cover,
+        // height: MediaQuery.of(context).size.height * 0.43,
+        height: responsiveImageHeight,
+        // width: double.infinity,
       ),
     );
   }
@@ -113,57 +122,63 @@ class _BottomSection extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: theme.primaryColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(100),
-                  ),
-                ),
-                onPressed: () {},
-                child: Row(
-                  children: [
-                    SvgPicture.asset(AppImagesRoute.iconPlay),
-                    const SizedBox(
-                      width: 8,
+              SizedBox(
+                height: 32,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: theme.primaryColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(100),
                     ),
-                    Text(
-                      'Play',
-                      style: theme.textTheme.bodyMedium!.copyWith(
-                        color: AppColors.white,
-                        fontWeight: FontWeight.w600,
+                  ),
+                  onPressed: () {},
+                  child: Row(
+                    children: [
+                      SvgPicture.asset(AppImagesRoute.iconPlay),
+                      const SizedBox(
+                        width: 8,
                       ),
-                    )
-                  ],
+                      Text(
+                        'Play',
+                        style: theme.textTheme.bodyMedium!.copyWith(
+                          color: AppColors.white,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(
                 width: 12,
               ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.transparent,
-                  shape: RoundedRectangleBorder(
-                    side: const BorderSide(
-                        color: AppColors.white, width: 2),
-                    borderRadius: BorderRadius.circular(100),
-                  ),
-                ),
-                onPressed: () {},
-                child: Row(
-                  children: [
-                    SvgPicture.asset(AppImagesRoute.iconPlus),
-                    const SizedBox(
-                      width: 8,
+              SizedBox(
+                height: 32,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.transparent,
+                    shape: RoundedRectangleBorder(
+                      side: const BorderSide(
+                          color: AppColors.white, width: 2),
+                      borderRadius: BorderRadius.circular(100),
                     ),
-                    Text(
-                      'My List',
-                      style: theme.textTheme.bodyMedium!.copyWith(
-                        color: AppColors.white,
-                        fontWeight: FontWeight.w600,
+                  ),
+                  onPressed: () {},
+                  child: Row(
+                    children: [
+                      SvgPicture.asset(AppImagesRoute.iconPlus),
+                      const SizedBox(
+                        width: 8,
                       ),
-                    )
-                  ],
+                      Text(
+                        'My List',
+                        style: theme.textTheme.bodyMedium!.copyWith(
+                          color: AppColors.white,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ],

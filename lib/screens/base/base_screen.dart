@@ -7,6 +7,7 @@ import 'package:mova/screens/explore/explore_screen.dart';
 import 'package:mova/screens/home/home_screen.dart';
 
 import '../../config/theme/app_colors.dart';
+import '../my_list/my_list_screen.dart';
 
 class BaseScreen extends StatefulWidget {
   const BaseScreen({Key? key}) : super(key: key);
@@ -111,7 +112,7 @@ class _BaseScreenState extends State<BaseScreen> {
 List<Widget> _getLayout() => [
       const HomeScreen(),
       const ExploreScreen(),
-      const HomeScreen(),
+      const MyListScreen(),
       const HomeScreen(),
       const HomeScreen(),
     ];
