@@ -28,6 +28,7 @@ class AppTheme {
   );
 
   static ThemeData lightMode = ThemeData(
+    appBarTheme: const AppBarTheme(backgroundColor: AppColors.white),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         elevation: 0,
         backgroundColor: AppColors.white,
@@ -41,6 +42,7 @@ class AppTheme {
       textTheme: appTextTheme);
 
   static ThemeData darkMode = ThemeData(
+      appBarTheme: const AppBarTheme(backgroundColor: AppColors.dark1),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         unselectedLabelStyle:
         GoogleFonts.urbanist(fontSize: 10.sp, fontWeight: FontWeight.w500),
@@ -65,6 +67,18 @@ class AppFontColorBuilder {
         : isDarkMode
             ? AppColors.white
             : Colors.blue;
+  }
+
+  static Color getGrey800AndWhite(BuildContext context) {
+    var brightness = MediaQuery.of(context).platformBrightness;
+    bool isLightMode = brightness == Brightness.light;
+    bool isDarkMode = brightness == Brightness.dark;
+
+    return isLightMode
+        ? AppColors.grey800
+        : isDarkMode
+        ? AppColors.white
+        : Colors.blue;
   }
 
   static Color getGrey100AndDark2(BuildContext context) {

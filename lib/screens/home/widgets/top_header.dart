@@ -57,6 +57,7 @@ class _TopImageSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final padding = MediaQuery.of(context).viewPadding;
     final screenHeight = MediaQuery.of(context).size.height;
     const designHeight = 926.0;
     const imageHeight = 400.0;

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mova/config/global/widgets/movie_card_item.dart';
 import 'package:mova/screens/home/widgets/movie_list.dart';
 import 'package:mova/screens/home/widgets/movie_list_title.dart';
 import 'package:mova/screens/home/widgets/top_header.dart';
