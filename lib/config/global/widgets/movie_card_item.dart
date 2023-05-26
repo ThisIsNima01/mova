@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mova/config/global/utils/random_movie_point.dart';
 
-import '../../../config/theme/app_colors.dart';
+import '../../theme/app_colors.dart';
 
 class MovieCardItem extends StatelessWidget {
   int itemIndex;

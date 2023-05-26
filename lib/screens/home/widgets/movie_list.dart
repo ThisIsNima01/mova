@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'movie_card_item.dart';
+import '../../../config/global/widgets/movie_card_item.dart';
 class MovieList extends StatelessWidget {
   int itemCount;
   String movieCategory;
