@@ -6,6 +6,7 @@ import 'package:mova/config/global/constants/image_routes.dart';
 import 'package:mova/screens/download/download_screen.dart';
 import 'package:mova/screens/explore/explore_screen.dart';
 import 'package:mova/screens/home/home_screen.dart';
+import 'package:mova/screens/profile/profile_screen.dart';
 
 import '../../config/theme/app_colors.dart';
 import '../my_list/my_list_screen.dart';
@@ -115,5 +116,5 @@ List<Widget> _getLayout() => [
       const ExploreScreen(),
       const MyListScreen(),
       const DownloadScreen(),
-      const HomeScreen(),
+      const ProfileScreen(),
     ];

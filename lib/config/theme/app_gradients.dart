@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppGradients {
-  Gradient redGradient = const LinearGradient(
+  static Gradient redGradient = const LinearGradient(
     colors: [
       Color(0xffFF4451),
       Color(0xffE21221),
@@ -10,7 +10,7 @@ class AppGradients {
     // end: Alignment.centerRight,
   );
 
-  Gradient yellowGradient = const LinearGradient(
+  static Gradient yellowGradient = const LinearGradient(
     colors: [
       Color(0xffFFE580),
       Color(0xffFACC15),
@@ -19,7 +19,7 @@ class AppGradients {
     // end: Alignment.centerRight,
   );
 
-  Gradient purpleGradient = const LinearGradient(
+  static Gradient purpleGradient = const LinearGradient(
     colors: [
       Color(0xff9953FF),
       Color(0xff7210FF),
@@ -28,7 +28,7 @@ class AppGradients {
     // end: Alignment.centerRight,
   );
 
-  Gradient blueGradient = const LinearGradient(
+  static Gradient blueGradient = const LinearGradient(
     colors: [
       Color(0xff5F82FF),
       Color(0xff335EF7),
@@ -37,7 +37,7 @@ class AppGradients {
     // end: Alignment.centerRight,
   );
 
-  Gradient greenGradient = const LinearGradient(
+  static Gradient greenGradient = const LinearGradient(
     colors: [
       Color(0xff35DEBC),
       Color(0xff22BB9C),
@@ -46,7 +46,7 @@ class AppGradients {
     // end: Alignment.centerRight,
   );
 
-  Gradient orangeGradient = const LinearGradient(
+  static Gradient orangeGradient = const LinearGradient(
     colors: [
       Color(0xffFFAB38),
       Color(0xffFB9400),

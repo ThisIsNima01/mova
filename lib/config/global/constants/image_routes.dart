@@ -3,6 +3,7 @@ class AppImagesRoute {
   static const String homeTopHeaderImage = 'assets/images/12.jpg';
   static const String emptyListLight = 'assets/images/empty_list_light.png';
   static const String emptyListDark = 'assets/images/empty_list_dark.png';
+  static const String userProfileImage = 'assets/images/user_profile.png';
 
   // Icons
   static const String appLogo = 'assets/images/app_logo.svg';
@@ -22,4 +23,7 @@ class AppImagesRoute {
   static const String iconProfileSelected = 'assets/images/icon_profile_selected.svg';
   static const String iconFilter = 'assets/images/icon_filter.svg';
   static const String iconTrash = 'assets/images/icon_trash.svg';
+  static const String iconEditProfile = 'assets/images/icon_edit_profile.svg';
+  static const String iconPremium = 'assets/images/icon_premium.svg';
+  static const String iconArrowRight = 'assets/images/icon_arrow_right.svg';
 }
