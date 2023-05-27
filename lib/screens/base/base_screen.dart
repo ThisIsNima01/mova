@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mova/config/global/constants/image_routes.dart';
+import 'package:mova/screens/download/download_screen.dart';
 import 'package:mova/screens/explore/explore_screen.dart';
 import 'package:mova/screens/home/home_screen.dart';
 
@@ -113,6 +114,6 @@ List<Widget> _getLayout() => [
       const HomeScreen(),
       const ExploreScreen(),
       const MyListScreen(),
-      const HomeScreen(),
+      const DownloadScreen(),
       const HomeScreen(),
     ];
