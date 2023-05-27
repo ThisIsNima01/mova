@@ -22,7 +22,7 @@ class MovieListTitle extends StatelessWidget {
             Text(
               title,
               style: theme.textTheme.headlineSmall!.copyWith(
-                  color: AppFontColorBuilder.getGrey900AndWhite(context)),
+                  color: AppDynamicColorBuilder.getGrey900AndWhite(context)),
             ),
             const Spacer(),
             Text(

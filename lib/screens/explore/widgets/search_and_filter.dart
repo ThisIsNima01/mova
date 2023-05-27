@@ -98,12 +98,12 @@ class _SearchFieldState extends State<SearchField> {
         duration: const Duration(milliseconds: 500),
         height: 56.h,
         decoration: BoxDecoration(
-          color: AppFontColorBuilder.getGrey100AndDark2(context),
+          color: AppDynamicColorBuilder.getGrey100AndDark2(context),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
             color: searchFocusNode.hasFocus
                 ? theme.primaryColor
-                : AppFontColorBuilder.getGrey100AndDark2(context),
+                : AppDynamicColorBuilder.getGrey100AndDark2(context),
             width: 1,
           ),
         ),
@@ -112,20 +112,20 @@ class _SearchFieldState extends State<SearchField> {
           focusNode: searchFocusNode,
           style: theme.textTheme.bodyMedium!.copyWith(
               fontWeight: FontWeight.w600,
-              color: AppFontColorBuilder.getGrey900AndWhite(context)),
+              color: AppDynamicColorBuilder.getGrey900AndWhite(context)),
           decoration: InputDecoration(
             enabledBorder: InputBorder.none,
             focusedBorder: InputBorder.none,
             hintText: 'Search',
             hintStyle: theme.textTheme.bodyMedium!.copyWith(
                 color:
-                AppFontColorBuilder.getGrey600AndGrey400(context),
+                AppDynamicColorBuilder.getGrey600AndGrey400(context),
                 fontWeight: FontWeight.w500),
             icon: SvgPicture.asset(
               AppImagesRoute.iconSearch,
               color: searchFocusNode.hasFocus
                   ? theme.primaryColor
-                  : AppFontColorBuilder.getGrey600AndGrey400(context),
+                  : AppDynamicColorBuilder.getGrey600AndGrey400(context),
             ),
           ),
         ),

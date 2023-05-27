@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mova/config/theme/app_colors.dart';
+import 'package:mova/my_theme_preference.dart';
 
 class AppTheme {
   static TextTheme appTextTheme = TextTheme(
@@ -56,76 +57,48 @@ class AppTheme {
       textTheme: appTextTheme);
 }
 
-class AppFontColorBuilder {
+class AppDynamicColorBuilder {
+  static bool? isDarkMode;
   static Color getGrey900AndWhite(BuildContext context) {
-    var brightness = MediaQuery.of(context).platformBrightness;
-    bool isLightMode = brightness == Brightness.light;
-    bool isDarkMode = brightness == Brightness.dark;
-
-    return isLightMode
-        ? AppColors.grey900
-        : isDarkMode
-            ? AppColors.white
-            : Colors.blue;
+    return isDarkMode ?? true
+        ? AppColors.white
+            : AppColors.grey900;
   }
 
   static Color getGrey800AndWhite(BuildContext context) {
-    var brightness = MediaQuery.of(context).platformBrightness;
-    bool isLightMode = brightness == Brightness.light;
-    bool isDarkMode = brightness == Brightness.dark;
 
-    return isLightMode
-        ? AppColors.grey800
-        : isDarkMode
+    return isDarkMode ?? true
         ? AppColors.white
-        : Colors.blue;
+        : AppColors.grey800;
   }
   static Color getGrey800AndGrey300(BuildContext context) {
-    var brightness = MediaQuery.of(context).platformBrightness;
-    bool isLightMode = brightness == Brightness.light;
-    bool isDarkMode = brightness == Brightness.dark;
-
-    return isLightMode
-        ? AppColors.grey800
-        : isDarkMode
+    return isDarkMode ?? true
         ? AppColors.grey300
-        : Colors.blue;
+        : AppColors.grey800;
   }
 
   static Color getGrey700AndGrey300(BuildContext context) {
-    var brightness = MediaQuery.of(context).platformBrightness;
-    bool isLightMode = brightness == Brightness.light;
-    bool isDarkMode = brightness == Brightness.dark;
 
-    return isLightMode
-        ? AppColors.grey700
-        : isDarkMode
+    return isDarkMode ?? true
         ? AppColors.grey300
-        : Colors.blue;
+        : AppColors.grey700;
   }
 
   static Color getGrey100AndDark2(BuildContext context) {
-    var brightness = MediaQuery.of(context).platformBrightness;
-    bool isLightMode = brightness == Brightness.light;
-    bool isDarkMode = brightness == Brightness.dark;
 
-    return isLightMode
-        ? AppColors.grey100
-        : isDarkMode
+    return isDarkMode ?? true
         ? AppColors.dark2
-        : Colors.blue;
+        : AppColors.grey100;
   }
 
   static Color getGrey600AndGrey400(BuildContext context) {
-    var brightness = MediaQuery.of(context).platformBrightness;
-    bool isLightMode = brightness == Brightness.light;
-    bool isDarkMode = brightness == Brightness.dark;
+    // var brightness = MediaQuery.of(context).platformBrightness;
+    // bool isLightMode = brightness == Brightness.light;
+    // bool isDarkMode = brightness == Brightness.dark;
 
-    return isLightMode
-        ? AppColors.grey400
-        : isDarkMode
+    return isDarkMode ?? true
         ? AppColors.grey600
-        : Colors.blue;
+        : AppColors.grey400;
   }
 
 // static Color getGrey900AndWhite(BuildContext context) => Theme.of(context).brightness == ThemeMode.light ? AppColors.grey900 : AppColors.white;

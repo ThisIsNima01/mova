@@ -39,6 +39,10 @@ dependencies:
   flutter_screenutil: ^5.7.0
   flutter_svg: ^2.0.5
   device_preview: ^1.1.0
+  animated_theme_switcher: ^2.0.8
+  flutter_animated_theme: ^1.0.0
+  shared_preferences: ^2.1.1
+  provider: ^6.0.5
 
 dev_dependencies:
   flutter_test:

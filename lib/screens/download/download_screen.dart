@@ -68,7 +68,7 @@ class DownloadMovieItem extends StatelessWidget {
                   Text(
                     getDownloadMoviesName()[index],
                     style: theme.textTheme.titleLarge!.copyWith(
-                      color: AppFontColorBuilder.getGrey900AndWhite(context),
+                      color: AppDynamicColorBuilder.getGrey900AndWhite(context),
                     ),
                   ),
                   const SizedBox(height: 12),
@@ -76,7 +76,7 @@ class DownloadMovieItem extends StatelessWidget {
                     '1h 42m 33s',
                     style: theme.textTheme.bodyMedium!.copyWith(
                         color:
-                            AppFontColorBuilder.getGrey800AndGrey300(context),
+                            AppDynamicColorBuilder.getGrey800AndGrey300(context),
                         fontWeight: FontWeight.w600),
                   ),
                   const SizedBox(

@@ -49,7 +49,7 @@ class _MyListScreenState extends State<MyListScreen> {
             'It seems that you haven\'t added\n any movies to the list',
             textAlign: TextAlign.center,
             style: theme.textTheme.titleLarge!.copyWith(
-                color: AppFontColorBuilder.getGrey800AndWhite(context),
+                color: AppDynamicColorBuilder.getGrey800AndWhite(context),
                 fontWeight: FontWeight.w500,
                 height: 1.5),
           ),

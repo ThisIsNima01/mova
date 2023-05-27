@@ -26,4 +26,9 @@ class AppImagesRoute {
   static const String iconEditProfile = 'assets/images/icon_edit_profile.svg';
   static const String iconPremium = 'assets/images/icon_premium.svg';
   static const String iconArrowRight = 'assets/images/icon_arrow_right.svg';
+  static const String iconSecurity = 'assets/images/icon_security.svg';
+  static const String iconLanguage = 'assets/images/icon_language.svg';
+  static const String iconEye = 'assets/images/icon_eye.svg';
+  static const String iconHelp = 'assets/images/icon_help.svg';
+  static const String iconPrivacy = 'assets/images/icon_privacy.svg';
 }

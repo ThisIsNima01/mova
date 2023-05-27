@@ -22,7 +22,7 @@ class ProjectAppBar extends StatelessWidget {
         child: Text(
           appBarTitle,
           style: theme.textTheme.headlineMedium!
-              .copyWith(color: AppFontColorBuilder.getGrey900AndWhite(context)),
+              .copyWith(color: AppDynamicColorBuilder.getGrey900AndWhite(context)),
         ),
       ),
       actions: actions,
@@ -50,7 +50,7 @@ class SearchAppBarAction extends StatelessWidget {
       padding: const EdgeInsets.only(top: 24, right: 24),
       child: SvgPicture.asset(
         AppImagesRoute.iconSearch,
-        color: AppFontColorBuilder.getGrey900AndWhite(context),
+        color: AppDynamicColorBuilder.getGrey900AndWhite(context),
       ),
     );
   }
