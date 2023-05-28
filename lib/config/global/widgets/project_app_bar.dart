@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
 
+import '../../../model_theme.dart';
 import '../../theme/app_theme.dart';
 import '../constants/image_routes.dart';
 class ProjectAppBar extends StatelessWidget {
@@ -46,11 +48,13 @@ class SearchAppBarAction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 24, right: 24),
-      child: SvgPicture.asset(
-        AppImagesRoute.iconSearch,
-        color: AppDynamicColorBuilder.getGrey900AndWhite(context),
+    return Consumer<ModelTheme>(
+      builder: (context, ModelTheme themeNotifier, child) => Padding(
+        padding: const EdgeInsets.only(top: 24, right: 24),
+        child: SvgPicture.asset(
+          AppImagesRoute.iconSearch,
+          color: AppDynamicColorBuilder.getGrey900AndWhite(context),
+        ),
       ),
     );
   }

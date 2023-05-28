@@ -1,4 +1,3 @@
-import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -78,12 +77,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     padding: EdgeInsets.symmetric(horizontal: 24.w),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(32),
-                      color: MediaQuery
-                          .of(context)
-                          .platformBrightness ==
-                          Brightness.light
-                          ? Colors.white
-                          : theme.scaffoldBackgroundColor,
+                      color: themeNotifier.isDark
+                          ? theme.scaffoldBackgroundColor
+                          : AppColors.white,
                     ),
                     child: Row(
                       children: [
@@ -124,11 +120,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   height: 24,
                 ),
                 SizedBox(
-                  height: MediaQuery
-                      .of(context)
-                      .size
-                      .height,
+                  // height: MediaQuery
+                  //     .of(context)
+                  //     .size
+                  //     .height,
                   child: ListView.builder(
+                    shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
                     itemCount: 8,
                     itemBuilder: (context, index) =>
@@ -161,6 +158,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               if (index == 5)
                                 Switch(
                                   activeColor: AppColors.white,
+                                  inactiveThumbColor: theme.primaryColor,
                                   activeTrackColor: theme.primaryColor,
                                   value: themeNotifier.isDark,
                                   onChanged: (value) {
