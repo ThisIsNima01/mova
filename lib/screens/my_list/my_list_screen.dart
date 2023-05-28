@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mova/config/global/constants/image_routes.dart';
 import 'package:mova/config/theme/app_theme.dart';
-import 'package:mova/model_theme.dart';
+import 'package:mova/theme_notifier.dart';
 import 'package:provider/provider.dart';
 
 import '../../config/global/widgets/project_app_bar.dart';
@@ -19,8 +19,8 @@ class _MyListScreenState extends State<MyListScreen> {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    return Consumer<ModelTheme>(
-      builder: (context, ModelTheme themeNotifier, child) => Scaffold(
+    return Consumer<ThemeNotifier>(
+      builder: (context, ThemeNotifier themeNotifier, child) => Scaffold(
         appBar: PreferredSize(
           preferredSize: const Size(double.infinity, 56),
           child: ProjectAppBar(

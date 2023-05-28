@@ -7,10 +7,7 @@ import '../../../config/theme/app_colors.dart';
 class TopHeader extends StatelessWidget {
   const TopHeader({
     super.key,
-    required this.theme,
   });
-
-  final ThemeData theme;
 
   @override
   Widget build(BuildContext context) {

@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 
 import 'my_theme_preference.dart';
 
-class ModelTheme extends ChangeNotifier {
+class ThemeNotifier extends ChangeNotifier {
   late bool _isDark;
   late MyThemePreferences _preferences;
   bool get isDark => _isDark;
 
-  ModelTheme() {
+  ThemeNotifier() {
     _isDark = false;
     _preferences = MyThemePreferences();
     getPreferences();
   }
-//Switching the themes
+
   set isDark(bool value) {
     _isDark = value;
     _preferences.setTheme(value);

@@ -6,14 +6,12 @@ class MovieListTitle extends StatelessWidget {
   String title;
   MovieListTitle({
     super.key,
-    required this.theme,
     required this.title,
   });
 
-  final ThemeData theme;
-
   @override
   Widget build(BuildContext context) {
+    ThemeData theme = Theme.of(context);
     return SliverPadding(
       padding:  EdgeInsets.all(24.w),
       sliver: SliverToBoxAdapter(
