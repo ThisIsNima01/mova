@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mova/config/theme/app_colors.dart';
-import 'package:mova/my_theme_preference.dart';
 
 class AppTheme {
   static TextTheme appTextTheme = TextTheme(
@@ -99,6 +98,45 @@ class AppDynamicColorBuilder {
     return isDarkMode ?? true
         ? AppColors.grey600
         : AppColors.grey400;
+  }
+  static Color getWhiteAndDark2(BuildContext context) {
+    // var brightness = MediaQuery.of(context).platformBrightness;
+    // bool isLightMode = brightness == Brightness.light;
+    // bool isDarkMode = brightness == Brightness.dark;
+
+    return isDarkMode ?? true
+        ? AppColors.dark2
+        : AppColors.white;
+  }
+
+  static Color getPrimary100AndDark3(BuildContext context) {
+    // var brightness = MediaQuery.of(context).platformBrightness;
+    // bool isLightMode = brightness == Brightness.light;
+    // bool isDarkMode = brightness == Brightness.dark;
+
+    return isDarkMode ?? true
+        ? AppColors.dark3
+        : AppColors.primary.withOpacity(0.2);
+  }
+
+  static Color getPrimaryAndWhite(BuildContext context) {
+    // var brightness = MediaQuery.of(context).platformBrightness;
+    // bool isLightMode = brightness == Brightness.light;
+    // bool isDarkMode = brightness == Brightness.dark;
+
+    return isDarkMode ?? true
+        ? AppColors.white
+        : AppColors.primary;
+  }
+
+  static Color getDark3AndGrey200(BuildContext context) {
+    // var brightness = MediaQuery.of(context).platformBrightness;
+    // bool isLightMode = brightness == Brightness.light;
+    // bool isDarkMode = brightness == Brightness.dark;
+
+    return isDarkMode ?? true
+        ? AppColors.dark3
+        : AppColors.grey200;
   }
 
 }

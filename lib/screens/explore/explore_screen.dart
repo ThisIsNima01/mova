@@ -16,14 +16,15 @@ class ExploreScreen extends StatefulWidget {
 class _ExploreScreenState extends State<ExploreScreen> {
   @override
   Widget build(BuildContext context) {
-    ThemeData theme = Theme.of(context);
     return Consumer<ThemeNotifier>(
       builder: (context, value, child) => Scaffold(
         body: SafeArea(
           child: CustomScrollView(
             slivers: [
               const SearchAndFilter(),
-              const MovieFilters(),
+              SliverToBoxAdapter(
+                child: MovieFilters(),
+              ),
               SliverPadding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
