@@ -1,9 +1,12 @@
 import 'dart:math';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mova/config/global/utils/random_movie_point.dart';
+import 'package:skeletons/skeletons.dart';
 
+import '../../../movie.dart';
 import '../../theme/app_colors.dart';
 
 class MovieCardItem extends StatelessWidget {
@@ -12,23 +15,26 @@ class MovieCardItem extends StatelessWidget {
   String movieCategory;
   bool needsSpacing;
 
-  MovieCardItem(
-      {Key? key,
-      required this.itemIndex,
-      required this.itemCount,
-      required this.movieCategory,required this.needsSpacing})
-      : super(key: key);
+  MovieCardItem({
+    Key? key,
+    required this.itemIndex,
+    required this.itemCount,
+    required this.movieCategory,
+    required this.needsSpacing,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
     return Container(
       width: 150.w,
-      margin: needsSpacing ? EdgeInsets.only(
-          left: itemIndex == 0 ? 24.w : 10.w,
-          right: itemIndex == itemCount - 1 ? 24.w : 0) : null,
+      margin: needsSpacing
+          ? EdgeInsets.only(
+              left: itemIndex == 0 ? 24.w : 10.w,
+              right: itemIndex == itemCount - 1 ? 24.w : 0)
+          : null,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
+        // borderRadius: BorderRadius.circular(12),
         image: DecorationImage(
           image: AssetImage('assets/images/$movieCategory/$itemIndex.png'),
           fit: BoxFit.fitHeight,

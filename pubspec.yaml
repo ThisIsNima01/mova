@@ -41,6 +41,11 @@ dependencies:
   device_preview: ^1.1.0
   shared_preferences: ^2.1.1
   provider: ^6.0.5
+  dio: ^5.1.2
+  cached_network_image: ^3.2.3
+  skeletons: ^0.0.3
+  bloc: ^8.1.2
+  equatable: ^2.0.5
 
 dev_dependencies:
   flutter_test:

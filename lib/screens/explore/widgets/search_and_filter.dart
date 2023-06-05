@@ -25,7 +25,11 @@ class _SearchAndFilterState extends State<SearchAndFilter> {
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
       sliver: SliverToBoxAdapter(
         child: Row(
-          children: const [SearchField(), SizedBox(width: 12), FilterButton()],
+          children: const [
+            SearchField(),
+            SizedBox(width: 12),
+            FilterButton(),
+          ],
         ),
       ),
     );
@@ -55,6 +59,7 @@ class FilterButton extends StatelessWidget {
               minChildSize: .4,
               maxChildSize: .9,
               builder: (context, scrollController) => Container(
+                padding: EdgeInsets.only(top: 20.h),
                 decoration: BoxDecoration(
                   color: AppDynamicColorBuilder.getWhiteAndDark2(context),
                   borderRadius: const BorderRadius.only(
@@ -69,8 +74,11 @@ class FilterButton extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const SizedBox(height: 24,),
+                      // const SizedBox(
+                      //   height: 24,
+                      // ),
                       SizedBox(
+                        height: 24,
                         width: double.infinity,
                         child: Text(
                           'Sort & Filter',
@@ -113,7 +121,7 @@ class FilterButton extends StatelessWidget {
                       ),
                       Divider(
                         color:
-                        AppDynamicColorBuilder.getDark3AndGrey200(context),
+                            AppDynamicColorBuilder.getDark3AndGrey200(context),
                         thickness: 1,
                       ),
                       Padding(
@@ -166,9 +174,7 @@ class FilterButton extends StatelessWidget {
                                 ),
                               ),
                             ),
-
                           ],
-
                         ),
                       ),
                     ],
