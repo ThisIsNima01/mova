@@ -11,9 +11,9 @@ class TopHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverToBoxAdapter(
+    return const SliverToBoxAdapter(
       child: Stack(
-        children: const [
+        children: [
           _TopImageSection(),
           _TopIconsSection(),
           _BottomSection()
@@ -54,7 +54,6 @@ class _TopImageSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final padding = MediaQuery.of(context).viewPadding;
     final screenHeight = MediaQuery.of(context).size.height;
     const designHeight = 926.0;
     const imageHeight = 400.0;

@@ -1,21 +1,15 @@
-import 'dart:math';
-
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mova/config/global/utils/random_movie_point.dart';
-import 'package:skeletons/skeletons.dart';
-
-import '../../../movie.dart';
 import '../../theme/app_colors.dart';
 
 class MovieCardItem extends StatelessWidget {
-  int itemIndex;
-  int itemCount;
-  String movieCategory;
-  bool needsSpacing;
+ final int itemIndex;
+ final int itemCount;
+ final String movieCategory;
+ final bool needsSpacing;
 
-  MovieCardItem({
+  const MovieCardItem({
     Key? key,
     required this.itemIndex,
     required this.itemCount,

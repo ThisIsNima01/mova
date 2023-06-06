@@ -2,15 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mova/config/global/constants/app_static_data.dart';
-
 import '../../../config/global/constants/image_routes.dart';
 import '../../../config/theme/app_theme.dart';
-import '../download_screen.dart';
 
 class DownloadMovieItem extends StatelessWidget {
-  int index;
+ final int index;
 
-  DownloadMovieItem({Key? key, required this.index}) : super(key: key);
+  const DownloadMovieItem({Key? key, required this.index}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +22,7 @@ class DownloadMovieItem extends StatelessWidget {
           Stack(
             alignment: Alignment.center,
             children: [
-              Image.asset('assets/images/downloads/${index}.png', width: 150.w),
+              Image.asset('assets/images/downloads/$index.png', width: 150.w),
               SvgPicture.asset(AppImagesRoute.iconPlay, height: 20, width: 20),
             ],
           ),

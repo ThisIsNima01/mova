@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mova/config/global/constants/image_routes.dart';
 import 'package:mova/config/theme/app_theme.dart';
 import 'package:mova/theme_notifier.dart';
@@ -21,11 +20,11 @@ class _MyListScreenState extends State<MyListScreen> {
     ThemeData theme = Theme.of(context);
     return Consumer<ThemeNotifier>(
       builder: (context, ThemeNotifier themeNotifier, child) => Scaffold(
-        appBar: PreferredSize(
-          preferredSize: const Size(double.infinity, 56),
+        appBar: const PreferredSize(
+          preferredSize: Size(double.infinity, 56),
           child: ProjectAppBar(
             appBarTitle: 'My List',
-            actions: const [
+            actions: [
               SearchAppBarAction(),
             ],
           ),

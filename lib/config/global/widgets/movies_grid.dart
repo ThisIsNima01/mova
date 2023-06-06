@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'movie_card_item.dart';
 class MoviesGrid extends StatelessWidget {
-  int childCount;
-  String movieCategory;
+  final int childCount;
+  final String movieCategory;
 
-  MoviesGrid({
+  const MoviesGrid({
     super.key,
     required this.childCount,
     required this.movieCategory,

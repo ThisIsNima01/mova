@@ -4,7 +4,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:mova/screens/explore/widgets/movie_filters.dart';
 import 'package:mova/theme_notifier.dart';
 import 'package:provider/provider.dart';
-
 import '../../../config/global/constants/image_routes.dart';
 import '../../../config/theme/app_colors.dart';
 import '../../../config/theme/app_theme.dart';
@@ -21,11 +20,11 @@ class SearchAndFilter extends StatefulWidget {
 class _SearchAndFilterState extends State<SearchAndFilter> {
   @override
   Widget build(BuildContext context) {
-    return SliverPadding(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+    return const SliverPadding(
+      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 24),
       sliver: SliverToBoxAdapter(
         child: Row(
-          children: const [
+          children: [
             SearchField(),
             SizedBox(width: 12),
             FilterButton(),
@@ -204,9 +203,9 @@ class FilterButton extends StatelessWidget {
 }
 
 class FilterTitle extends StatelessWidget {
-  String title;
+  final String title;
 
-  FilterTitle({
+  const FilterTitle({
     super.key,
     required this.title,
   });

@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import '../../../config/global/widgets/movie_card_item.dart';
 
 class MovieList extends StatelessWidget {
-  int itemCount;
-  String movieCategory;
+ final int itemCount;
+ final String movieCategory;
 
-  MovieList({
+  const MovieList({
     super.key,
     required this.itemCount,
     required this.movieCategory,

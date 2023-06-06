@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../config/theme/app_theme.dart';
 class MovieListTitle extends StatelessWidget {
-  String title;
-  MovieListTitle({
+  final String title;
+  const MovieListTitle({
     super.key,
     required this.title,
   });

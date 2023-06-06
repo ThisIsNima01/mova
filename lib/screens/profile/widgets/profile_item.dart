@@ -8,9 +8,9 @@ import '../../../config/theme/app_colors.dart';
 import '../../../config/theme/app_theme.dart';
 import '../../../theme_notifier.dart';
 class ProfileOptionItem extends StatelessWidget {
-  int index;
-  ThemeNotifier themeNotifier;
-  ProfileOptionItem({
+  final int index;
+  final ThemeNotifier themeNotifier;
+  const ProfileOptionItem({
     super.key,
     required this.index,
     required this.themeNotifier,

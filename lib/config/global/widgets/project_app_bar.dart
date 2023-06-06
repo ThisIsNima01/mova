@@ -6,9 +6,9 @@ import '../../../theme_notifier.dart';
 import '../../theme/app_theme.dart';
 import '../constants/image_routes.dart';
 class ProjectAppBar extends StatelessWidget {
-  String appBarTitle;
-  List<Widget>? actions;
-   ProjectAppBar({
+  final String appBarTitle;
+  final List<Widget>? actions;
+   const ProjectAppBar({
     super.key,
     required this.appBarTitle,
      this.actions,

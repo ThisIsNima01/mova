@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mova/config/global/constants/image_routes.dart';
 import 'package:mova/config/global/widgets/project_app_bar.dart';
-import 'package:mova/config/theme/app_colors.dart';
-import 'package:mova/config/theme/app_gradients.dart';
 import 'package:mova/config/theme/app_theme.dart';
 import 'package:mova/screens/profile/widgets/premium_card.dart';
 import 'package:mova/screens/profile/widgets/profile_item.dart';
@@ -26,8 +21,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
     ThemeData theme = Theme.of(context);
     return Consumer(
       builder: (context, ThemeNotifier themeNotifier, child) => Scaffold(
-        appBar: PreferredSize(
-          preferredSize: const Size(double.infinity, 56),
+        appBar: const PreferredSize(
+          preferredSize: Size(double.infinity, 56),
           child: ProjectAppBar(
             appBarTitle: 'Profile',
           ),

@@ -28,13 +28,14 @@ class AppTheme {
   );
 
   static ThemeData lightMode = ThemeData(
-    appBarTheme: const AppBarTheme(backgroundColor: AppColors.white),
+      appBarTheme: const AppBarTheme(backgroundColor: AppColors.white),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         elevation: 0,
         backgroundColor: AppColors.white,
         unselectedLabelStyle:
             GoogleFonts.urbanist(fontSize: 10.sp, fontWeight: FontWeight.w500),
-        selectedLabelStyle: GoogleFonts.urbanist(fontSize: 10.sp, fontWeight: FontWeight.w700),
+        selectedLabelStyle:
+            GoogleFonts.urbanist(fontSize: 10.sp, fontWeight: FontWeight.w700),
       ),
       scaffoldBackgroundColor: AppColors.white,
       brightness: Brightness.light,
@@ -45,8 +46,9 @@ class AppTheme {
       appBarTheme: const AppBarTheme(backgroundColor: AppColors.dark1),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         unselectedLabelStyle:
-        GoogleFonts.urbanist(fontSize: 10.sp, fontWeight: FontWeight.w500),
-        selectedLabelStyle: GoogleFonts.urbanist(fontSize: 10.sp, fontWeight: FontWeight.w700),
+            GoogleFonts.urbanist(fontSize: 10.sp, fontWeight: FontWeight.w500),
+        selectedLabelStyle:
+            GoogleFonts.urbanist(fontSize: 10.sp, fontWeight: FontWeight.w700),
         elevation: 0,
         backgroundColor: const Color(0xff181A20).withOpacity(0.8),
       ),
@@ -58,85 +60,32 @@ class AppTheme {
 
 class AppDynamicColorBuilder {
   static bool? isDarkMode;
-  static Color getGrey900AndWhite(BuildContext context) {
-    return isDarkMode ?? true
-        ? AppColors.white
-            : AppColors.grey900;
-  }
 
-  static Color getGrey800AndWhite(BuildContext context) {
+  static Color getGrey900AndWhite(BuildContext context) => isDarkMode ?? true ? AppColors.white : AppColors.grey900;
 
-    return isDarkMode ?? true
-        ? AppColors.white
-        : AppColors.grey800;
-  }
-  static Color getGrey800AndGrey300(BuildContext context) {
-    return isDarkMode ?? true
-        ? AppColors.grey300
-        : AppColors.grey800;
-  }
+  static Color getGrey800AndWhite(BuildContext context) => isDarkMode ?? true ? AppColors.white : AppColors.grey800;
 
-  static Color getGrey700AndGrey300(BuildContext context) {
+  static Color getGrey800AndGrey300(BuildContext context) =>
+      isDarkMode ?? true ? AppColors.grey300 : AppColors.grey800;
 
-    return isDarkMode ?? true
-        ? AppColors.grey300
-        : AppColors.grey700;
-  }
+  static Color getGrey700AndGrey300(BuildContext context) =>
+      isDarkMode ?? true ? AppColors.grey300 : AppColors.grey700;
 
-  static Color getGrey100AndDark2(BuildContext context) {
+  static Color getGrey100AndDark2(BuildContext context) =>
+      isDarkMode ?? true ? AppColors.dark2 : AppColors.grey100;
 
-    return isDarkMode ?? true
-        ? AppColors.dark2
-        : AppColors.grey100;
-  }
+  static Color getGrey600AndGrey400(BuildContext context) =>
+      isDarkMode ?? true ? AppColors.grey600 : AppColors.grey400;
 
-  static Color getGrey600AndGrey400(BuildContext context) {
-    // var brightness = MediaQuery.of(context).platformBrightness;
-    // bool isLightMode = brightness == Brightness.light;
-    // bool isDarkMode = brightness == Brightness.dark;
+  static Color getWhiteAndDark2(BuildContext context) =>
+      isDarkMode ?? true ? AppColors.dark2 : AppColors.white;
 
-    return isDarkMode ?? true
-        ? AppColors.grey600
-        : AppColors.grey400;
-  }
-  static Color getWhiteAndDark2(BuildContext context) {
-    // var brightness = MediaQuery.of(context).platformBrightness;
-    // bool isLightMode = brightness == Brightness.light;
-    // bool isDarkMode = brightness == Brightness.dark;
+  static Color getPrimary100AndDark3(BuildContext context) =>
+      isDarkMode ?? true ? AppColors.dark3 : AppColors.primary.withOpacity(0.2);
 
-    return isDarkMode ?? true
-        ? AppColors.dark2
-        : AppColors.white;
-  }
+  static Color getPrimaryAndWhite(BuildContext context) =>
+      isDarkMode ?? true ? AppColors.white : AppColors.primary;
 
-  static Color getPrimary100AndDark3(BuildContext context) {
-    // var brightness = MediaQuery.of(context).platformBrightness;
-    // bool isLightMode = brightness == Brightness.light;
-    // bool isDarkMode = brightness == Brightness.dark;
-
-    return isDarkMode ?? true
-        ? AppColors.dark3
-        : AppColors.primary.withOpacity(0.2);
-  }
-
-  static Color getPrimaryAndWhite(BuildContext context) {
-    // var brightness = MediaQuery.of(context).platformBrightness;
-    // bool isLightMode = brightness == Brightness.light;
-    // bool isDarkMode = brightness == Brightness.dark;
-
-    return isDarkMode ?? true
-        ? AppColors.white
-        : AppColors.primary;
-  }
-
-  static Color getDark3AndGrey200(BuildContext context) {
-    // var brightness = MediaQuery.of(context).platformBrightness;
-    // bool isLightMode = brightness == Brightness.light;
-    // bool isDarkMode = brightness == Brightness.dark;
-
-    return isDarkMode ?? true
-        ? AppColors.dark3
-        : AppColors.grey200;
-  }
-
+  static Color getDark3AndGrey200(BuildContext context) =>
+      isDarkMode ?? true ? AppColors.dark3 : AppColors.grey200;
 }
