@@ -28,7 +28,7 @@ class _DownloadScreenState extends State<DownloadScreen> {
             child: ListView.builder(
               shrinkWrap: true,
               itemCount: 6,
-              itemBuilder: (context, index) => DownloadMovieItem(index: index),
+              itemBuilder: (context, index) => DownloadMovieItem(index: index,isDeleting: false,),
             ),
           ),
         ),

@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:mova/screens/explore/widgets/movie_filters.dart';
+import 'package:mova/config/global/constants/app_static_data.dart';
 import 'package:mova/theme_notifier.dart';
 import 'package:provider/provider.dart';
 import '../../../config/global/constants/image_routes.dart';
+import '../../../config/global/utils/show_modal.dart';
 import '../../../config/theme/app_colors.dart';
 import '../../../config/theme/app_theme.dart';
+import 'modal_item.dart';
 
 class SearchAndFilter extends StatefulWidget {
   const SearchAndFilter({
@@ -42,148 +44,26 @@ class FilterButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ThemeData theme = Theme.of(context);
     return GestureDetector(
-      onTap: () {
-        showModalBottomSheet(
-          context: context,
-          isScrollControlled: true,
-          backgroundColor: Colors.transparent,
-          barrierColor: const Color(0xff09101D).withOpacity(0.7),
-          builder: (context) => Padding(
-            padding: EdgeInsets.only(
-                bottom: MediaQuery.of(context).viewInsets.bottom),
-            child: DraggableScrollableSheet(
-              initialChildSize: .7,
-              minChildSize: .4,
-              maxChildSize: .9,
-              builder: (context, scrollController) => Container(
-                padding: EdgeInsets.only(top: 20.h),
-                decoration: BoxDecoration(
-                  color: AppDynamicColorBuilder.getWhiteAndDark2(context),
-                  borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(40),
-                    topRight: Radius.circular(40),
-                  ),
-                ),
-                child: SingleChildScrollView(
-                  controller: scrollController,
-                  physics: const NeverScrollableScrollPhysics(),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      // const SizedBox(
-                      //   height: 24,
-                      // ),
-                      SizedBox(
-                        height: 24,
-                        width: double.infinity,
-                        child: Text(
-                          'Sort & Filter',
-                          textAlign: TextAlign.center,
-                          style: theme.textTheme.headlineMedium!
-                              .copyWith(color: AppColors.error),
-                        ),
-                      ),
-                      const SizedBox(height: 24),
-                      Divider(
-                        color:
-                            AppDynamicColorBuilder.getDark3AndGrey200(context),
-                        thickness: 1,
-                      ),
-                      const SizedBox(height: 24),
-                      FilterTitle(title: 'Categories'),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 24),
-                        child: MovieFilters(selectedIndex: 3),
-                      ),
-                      FilterTitle(title: 'Regions'),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 24),
-                        child: MovieFilters(selectedIndex: 4),
-                      ),
-                      FilterTitle(title: 'Genre'),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 24),
-                        child: MovieFilters(selectedIndex: 2),
-                      ),
-                      FilterTitle(title: 'Time/Periods'),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 24),
-                        child: MovieFilters(selectedIndex: 0),
-                      ),
-                      FilterTitle(title: 'Sort'),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 24),
-                        child: MovieFilters(selectedIndex: 1),
-                      ),
-                      Divider(
-                        color:
-                            AppDynamicColorBuilder.getDark3AndGrey200(context),
-                        thickness: 1,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(24),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Expanded(
-                              child: SizedBox(
-                                height: 58.h,
-                                child: ElevatedButton(
-                                  onPressed: () {},
-                                  style: ElevatedButton.styleFrom(
-                                    elevation: 0,
-                                    backgroundColor: AppDynamicColorBuilder
-                                        .getPrimary100AndDark3(context),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(100),
-                                    ),
-                                  ),
-                                  child: Text(
-                                    'Reset',
-                                    style: theme.textTheme.bodyLarge!.copyWith(
-                                      color: AppDynamicColorBuilder
-                                          .getPrimaryAndWhite(context),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              width: 12,
-                            ),
-                            Expanded(
-                              child: SizedBox(
-                                height: 58.h,
-                                child: ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: theme.primaryColor,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(100),
-                                    ),
-                                  ),
-                                  onPressed: () {
-                                    Navigator.pop(context);
-                                  },
-                                  child: Text('Apply',
-                                      style: theme.textTheme.bodyLarge!
-                                          .copyWith(color: AppColors.white)),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
+      onTap: () => showAppModal(
+        context: context,
+        initChildSize: .7,
+        minChildSize: .4,
+        maxChildSize: .9,
+        modalTitle: 'Sort & Filter',
+        primaryButtonTitle: 'Apply',
+        secondaryButtonTitle: 'Reset',
+        mainModalContent: Card(
+          color: Colors.transparent,
+          elevation: 0,
+          child: ListView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: AppStaticData.exploreModalTitles.length,
+            itemBuilder: (context, index) => ExploreModalItem(index: index),
           ),
-        );
-      },
+        ),
+      ),
       child: Container(
         width: 56.w,
         height: 56.h,
@@ -196,30 +76,6 @@ class FilterButton extends StatelessWidget {
         ),
         child: SvgPicture.asset(
           AppImagesRoute.iconFilter,
-        ),
-      ),
-    );
-  }
-}
-
-class FilterTitle extends StatelessWidget {
-  final String title;
-
-  const FilterTitle({
-    super.key,
-    required this.title,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    ThemeData theme = Theme.of(context);
-    return Padding(
-      padding: const EdgeInsets.only(left: 24),
-      child: Text(
-        title,
-        textAlign: TextAlign.left,
-        style: theme.textTheme.headlineSmall!.copyWith(
-          color: AppDynamicColorBuilder.getGrey800AndWhite(context),
         ),
       ),
     );
@@ -296,3 +152,6 @@ class _SearchFieldState extends State<SearchField> {
     );
   }
 }
+
+
+

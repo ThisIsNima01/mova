@@ -28,7 +28,7 @@ class MovieCardItem extends StatelessWidget {
               right: itemIndex == itemCount - 1 ? 24.w : 0)
           : null,
       decoration: BoxDecoration(
-        // borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(12),
         image: DecorationImage(
           image: AssetImage('assets/images/$movieCategory/$itemIndex.png'),
           fit: BoxFit.fitHeight,
