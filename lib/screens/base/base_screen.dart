@@ -24,7 +24,10 @@ class _BaseScreenState extends State<BaseScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(index: _selectedBottomNavIndex, children:  _getLayout()),
+      body: IndexedStack(
+        index: _selectedBottomNavIndex,
+        children: _getLayout(),
+      ),
       bottomNavigationBar: Container(
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(
@@ -69,7 +72,8 @@ class _BaseScreenState extends State<BaseScreen> {
                     ),
                     activeIcon: Padding(
                       padding: const EdgeInsets.only(bottom: 4),
-                      child: SvgPicture.asset(AppImagesRoute.iconExploreSelected),
+                      child:
+                          SvgPicture.asset(AppImagesRoute.iconExploreSelected),
                     ),
                     label: 'Explore'),
                 BottomNavigationBarItem(
@@ -79,7 +83,8 @@ class _BaseScreenState extends State<BaseScreen> {
                     ),
                     activeIcon: Padding(
                       padding: const EdgeInsets.only(bottom: 4),
-                      child: SvgPicture.asset(AppImagesRoute.iconMyListSelected),
+                      child:
+                          SvgPicture.asset(AppImagesRoute.iconMyListSelected),
                     ),
                     label: 'My List'),
                 BottomNavigationBarItem(
@@ -89,7 +94,8 @@ class _BaseScreenState extends State<BaseScreen> {
                     ),
                     activeIcon: Padding(
                       padding: const EdgeInsets.only(bottom: 4),
-                      child: SvgPicture.asset(AppImagesRoute.iconDownloadSelected),
+                      child:
+                          SvgPicture.asset(AppImagesRoute.iconDownloadSelected),
                     ),
                     label: 'Download'),
                 BottomNavigationBarItem(
@@ -99,7 +105,8 @@ class _BaseScreenState extends State<BaseScreen> {
                     ),
                     activeIcon: Padding(
                       padding: const EdgeInsets.only(bottom: 4),
-                      child: SvgPicture.asset(AppImagesRoute.iconProfileSelected),
+                      child:
+                          SvgPicture.asset(AppImagesRoute.iconProfileSelected),
                     ),
                     label: 'Profile'),
               ],

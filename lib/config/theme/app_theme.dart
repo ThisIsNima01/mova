@@ -59,33 +59,33 @@ class AppTheme {
 }
 
 class AppDynamicColorBuilder {
-  static bool? isDarkMode;
+  static bool isDarkMode = false;
 
-  static Color getGrey900AndWhite(BuildContext context) => isDarkMode ?? true ? AppColors.white : AppColors.grey900;
+  static Color getGrey900AndWhite(BuildContext context) => isDarkMode ? AppColors.white : AppColors.grey900;
 
-  static Color getGrey800AndWhite(BuildContext context) => isDarkMode ?? true ? AppColors.white : AppColors.grey800;
+  static Color getGrey800AndWhite(BuildContext context) => isDarkMode ? AppColors.white : AppColors.grey800;
 
   static Color getGrey800AndGrey300(BuildContext context) =>
-      isDarkMode ?? true ? AppColors.grey300 : AppColors.grey800;
+      isDarkMode ? AppColors.grey300 : AppColors.grey800;
 
   static Color getGrey700AndGrey300(BuildContext context) =>
-      isDarkMode ?? true ? AppColors.grey300 : AppColors.grey700;
+      isDarkMode ? AppColors.grey300 : AppColors.grey700;
 
   static Color getGrey100AndDark2(BuildContext context) =>
-      isDarkMode ?? true ? AppColors.dark2 : AppColors.grey100;
+      isDarkMode ? AppColors.dark2 : AppColors.grey100;
 
   static Color getGrey600AndGrey400(BuildContext context) =>
-      isDarkMode ?? true ? AppColors.grey600 : AppColors.grey400;
+      isDarkMode ? AppColors.grey600 : AppColors.grey400;
 
   static Color getWhiteAndDark2(BuildContext context) =>
-      isDarkMode ?? true ? AppColors.dark2 : AppColors.white;
+      isDarkMode ? AppColors.dark2 : AppColors.white;
 
   static Color getPrimary100AndDark3(BuildContext context) =>
-      isDarkMode ?? true ? AppColors.dark3 : AppColors.primary.withOpacity(0.2);
+      isDarkMode ? AppColors.dark3 : AppColors.primary.withOpacity(0.2);
 
   static Color getPrimaryAndWhite(BuildContext context) =>
-      isDarkMode ?? true ? AppColors.white : AppColors.primary;
+      isDarkMode ? AppColors.white : AppColors.primary;
 
   static Color getDark3AndGrey200(BuildContext context) =>
-      isDarkMode ?? true ? AppColors.dark3 : AppColors.grey200;
+      isDarkMode ? AppColors.dark3 : AppColors.grey200;
 }
