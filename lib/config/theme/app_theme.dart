@@ -28,7 +28,10 @@ class AppTheme {
   );
 
   static ThemeData lightMode = ThemeData(
-      appBarTheme: const AppBarTheme(backgroundColor: AppColors.white),
+      appBarTheme: const AppBarTheme(
+          backgroundColor: AppColors.white,
+          iconTheme: IconThemeData(color: AppColors.grey900),
+          elevation: 0),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         elevation: 0,
         backgroundColor: AppColors.white,
@@ -43,7 +46,10 @@ class AppTheme {
       textTheme: appTextTheme);
 
   static ThemeData darkMode = ThemeData(
-      appBarTheme: const AppBarTheme(backgroundColor: AppColors.dark1),
+      appBarTheme: const AppBarTheme(
+          backgroundColor: AppColors.dark1,
+          iconTheme: IconThemeData(color: AppColors.white),
+          elevation: 0),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         unselectedLabelStyle:
             GoogleFonts.urbanist(fontSize: 10.sp, fontWeight: FontWeight.w500),
@@ -61,9 +67,11 @@ class AppTheme {
 class AppDynamicColorBuilder {
   static bool isDarkMode = false;
 
-  static Color getGrey900AndWhite(BuildContext context) => isDarkMode ? AppColors.white : AppColors.grey900;
+  static Color getGrey900AndWhite(BuildContext context) =>
+      isDarkMode ? AppColors.white : AppColors.grey900;
 
-  static Color getGrey800AndWhite(BuildContext context) => isDarkMode ? AppColors.white : AppColors.grey800;
+  static Color getGrey800AndWhite(BuildContext context) =>
+      isDarkMode ? AppColors.white : AppColors.grey800;
 
   static Color getGrey800AndGrey300(BuildContext context) =>
       isDarkMode ? AppColors.grey300 : AppColors.grey800;
@@ -88,4 +96,7 @@ class AppDynamicColorBuilder {
 
   static Color getDark3AndGrey200(BuildContext context) =>
       isDarkMode ? AppColors.dark3 : AppColors.grey200;
+
+  static Color getDark2AndGrey50(BuildContext context) =>
+      isDarkMode ? AppColors.dark2 : AppColors.grey50;
 }

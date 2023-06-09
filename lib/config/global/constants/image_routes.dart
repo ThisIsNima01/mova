@@ -31,4 +31,5 @@ class AppImagesRoute {
   static const String iconEye = 'assets/images/icon_eye.svg';
   static const String iconHelp = 'assets/images/icon_help.svg';
   static const String iconPrivacy = 'assets/images/icon_privacy.svg';
+  static const String iconDone = 'assets/images/icon_done.svg';
 }

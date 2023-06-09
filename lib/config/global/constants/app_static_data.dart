@@ -29,5 +29,17 @@ class AppStaticData {
     'Latest Release'
   ];
 
-  static const List<String> exploreModalTitles = ['Categories','Regions','Genre','Time/Periods','Sort'];
+  static const List<String> exploreModalTitles = [
+    'Categories',
+    'Regions',
+    'Genre',
+    'Time/Periods',
+    'Sort'
+  ];
+
+  static const List<String> subscriptionCardFeaturesTitle = [
+    'Watch all you want. Ad-free.',
+    'Allows streaming of 4K.',
+    'Video & Audio Quality is Better.'
+  ];
 }

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../config/global/widgets/movie_card_item.dart';
 
 class MovieList extends StatelessWidget {
- final int itemCount;
- final String movieCategory;
+  final int itemCount;
+  final String movieCategory;
 
   const MovieList({
     super.key,
@@ -20,7 +20,12 @@ class MovieList extends StatelessWidget {
         child: ListView.builder(
           itemCount: itemCount,
           scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) => MovieCardItem(itemIndex: index, itemCount: itemCount, movieCategory: movieCategory,needsSpacing: true),
+          itemBuilder: (context, index) => MovieCardItem(
+            itemIndex: index,
+            itemCount: itemCount,
+            movieCategory: movieCategory,
+            needsSpacing: true,
+          ),
         ),
       ),
     );
